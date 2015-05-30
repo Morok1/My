@@ -30,3 +30,16 @@ int full (buffer_t *buffer)
  	else 
  		return 0;
  }
+void push(buffer_t *buffer, void *data)
+{
+	int index;
+	if (full(buffer)){
+		printf("Buffer overflow\n");
+	} else {
+		index=buffer->start+buffer->count++;
+		if (index>=buffer->size){
+			index=0;
+		}
+		buffer->element[index]=data;
+	}
+}
