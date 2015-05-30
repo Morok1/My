@@ -43,3 +43,18 @@ int empty(buffer_t *buffer)
 		buffer->element[index]=data;
 	}
 }
+void * pop(buffer_t * buffer)
+{	
+	void* element;
+	if (empty(buffer)) {
+		printf("Buffer underlow\n");
+	} else {	
+		element=buffer->element[buffer->start];
+		buffer->start++;
+		buffer->count--;
+		if (buffer->start == buffer->size){
+			buffer->start=0;
+		}
+	return element;	
+	}
+	
