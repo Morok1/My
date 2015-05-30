@@ -20,3 +20,13 @@ int empty(buffer_t *buffer)
  	else 
  		return 0;
  }
+
+ int full (buffer_t *buffer)
+ {
+ 	if (buffer->count==buffer->size)
+ 	{
+ 		return 1; 		
+ 	}
+ 	else 
+ 		return 0;
+ }
