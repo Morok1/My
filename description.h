@@ -3,3 +3,10 @@
 #include"ringbuffer.h"
 
 typedef struct buffer buffer_t;
+void create(buffer_t *buffer, int size)
+ {
+ 	buffer->size=size;
+ 	buffer->count=0;
+ 	buffer->start=0;
+ 	buffer->element=malloc(sizeof(buffer->element)*size);
+ }
